@@ -3,11 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {Provider} from 'mobx-react'
+import {TaskManager as taskManager} from '../src/store/TaskManager'
+import {GeneralStore as generalStore} from '../src/store/GeneralStore'
 
+const TaskManager = new taskManager()
+const GeneralStore = new generalStore()
+const stores = {
+  TaskManager,
+  GeneralStore
+}
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider {... stores}>
+  <App />
+  </Provider>,
   document.getElementById('root')
 );
 

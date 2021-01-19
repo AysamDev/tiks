@@ -8,10 +8,11 @@ class LetsPlan extends Component {
     render() {
       
       return (
-     <div>Lets Plan
+     <div className="lets-plan">
          <AddTask />
-         <TaskList />
          <ClockPopUp />
+         <TaskList />
+
      </div>
         )
     }
