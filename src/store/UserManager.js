@@ -17,9 +17,9 @@ export class UserManager
         let response = await axios.post(`http://localhost:${PORT}/userSignIn`,{username,password})
 
     }
-    userSignUp = async (user) =>
+    userSignUp = async (username,password, name, surname) =>
     {
 
-        let response = await axios.post(`http://localhost:${PORT}/userSignUp`,{user})
+        let response = await axios.post(`http://localhost:${PORT}/userSignUp`,{username,password, name, surname})
     }
 }

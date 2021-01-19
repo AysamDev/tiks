@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const express = require('express')
 const app = express()
-const api = require('./backend/api')
+const api = require('./server/api')
 const port = 8080
 
 app.use(express.json())

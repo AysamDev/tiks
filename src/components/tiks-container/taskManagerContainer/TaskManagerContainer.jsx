@@ -9,8 +9,8 @@ class TaskManagerContainer extends Component {
     render() {
       
       return (
-     <div>TaskManagerContainer
-         <Home />
+     <div>
+         {/* <Home /> */}
          <LetsPlan />
          <Routine />
          <Reports />
