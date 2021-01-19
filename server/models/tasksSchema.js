@@ -2,8 +2,8 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const tasksSchema = new Schema({
-    tasks: [{type: Schema.Types.ObjectId, ref: 'Task'}],
-    date: Date
+    date: Date,
+    tasks: [{type: Schema.Types.ObjectId, ref: 'TaskModel'}]
 })
 
 const Tasks = mongoose.model("TasksModel", tasksSchema)
