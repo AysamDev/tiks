@@ -12,10 +12,7 @@
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.0",
-<<<<<<< HEAD
-=======
     "mongoose": "^5.11.12",
->>>>>>> 5db4174af33f1f20dffd6b2ed9105089f0d87039
     "axios": "^0.21.1",
     "google-map-react": "^2.1.9",
     "mobx": "^6.0.4",
