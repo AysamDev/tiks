@@ -30,7 +30,6 @@ export class TaskManager
         alert("task title already exist, please enter another title.")
         :
         this.temporaryTasks.push(task)
-
     }
 
     deleteTemporaryTask = (title) =>
