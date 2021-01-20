@@ -5,7 +5,7 @@ import TasksView from './TasksView';
 import { observer,inject } from 'mobx-react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMap } from '@fortawesome/free-solid-svg-icons'
-
+import { Redirect } from "react-router-dom";
 class Home extends Component {
 
 
@@ -17,6 +17,7 @@ class Home extends Component {
      
       return (
      <div className="home">
+       <Redirect to="/home" from='/home'></Redirect>
          <HeaderDate />
          <FontAwesomeIcon icon={faMap} size="10x" onClick={this.changeMapState} color="green"/>
          {this.props.GeneralStore.openMap?<MapView name={this.props.GeneralStore.mapOpener}/>:null}
