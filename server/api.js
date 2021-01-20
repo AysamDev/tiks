@@ -4,7 +4,6 @@ const Routine = require('./models/routineSchema')
 const Tasks = require('./models/tasksSchema')
 const Task = require('./models/taskSchema')
 const User = require('./models/userSchema')
-const { useObserver } = require('mobx-react')
 
 // ROUTES
 
