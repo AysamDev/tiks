@@ -1,6 +1,17 @@
 import React, {Component} from 'react';
 import { observer,inject } from 'mobx-react'
+import Grid from '@material-ui/core/Grid';
+import DateFnsUtils from '@date-io/date-fns';
+import {
+  MuiPickersUtilsProvider,
+  TimePicker,
+  KeyboardDatePicker,
+} from '@material-ui/pickers';
+
+
 class AddTask extends Component {
+
+
   inputHandler = (e) =>
   {
       this.props.GeneralStore.handleInput(e)
@@ -10,8 +21,14 @@ class AddTask extends Component {
   {
     this.props.TaskManager.addTemporaryTask()
   }
+
+  setStartTime = (date) => {
+      this.props.GeneralStore.setStartTime(date)
+  };
+  setEndTime = (date) => {
+    this.props.GeneralStore.setEndTime(date)
+};
     render() {
-      
       return (
      <div className="add-task">
        <h3>Let's Plan Your Day</h3>
@@ -28,11 +45,31 @@ class AddTask extends Component {
           <br></br>
           <input name="taskPlace" type="text" placeholder="place..." value={this.props.GeneralStore.taskPlace} onChange={this.inputHandler}/>
        </div>
-       <div className="task-time">
             <div>Approximate Time </div>
-            <button>Start Time</button>
-            <button>End Time</button>
-       </div>
+        <MuiPickersUtilsProvider utils={DateFnsUtils}>
+          <Grid container justify="space-around">
+            <TimePicker
+              name="startTime"
+              margin="normal"
+              id="time-picker"
+              label="Start Time"
+              disablePast
+              value={this.props.GeneralStore.startTime}
+              onChange={this.setStartTime}
+        
+            />
+            <TimePicker
+              name="endTime"
+              margin="normal"
+              id="time-picker"
+              label="End Time"
+              disablePast
+              value={this.props.GeneralStore.endTime}
+              onChange={this.setEndTime}
+        
+            />
+          </Grid>
+      </MuiPickersUtilsProvider>
        <div className="task-priority">
             <span>Priority </span>
             <select name="taskPriority" id="taskPriority" value={this.props.GeneralStore.taskPriority} onChange={this.inputHandler}>
