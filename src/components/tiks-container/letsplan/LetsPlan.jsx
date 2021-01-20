@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import AddTask from './AddTask';
 import TaskList from './TaskList';
-import ClockPopUp from './ClockPopUp';
+import { observer,inject } from 'mobx-react'
 
 class LetsPlan extends Component {
     
@@ -10,12 +10,10 @@ class LetsPlan extends Component {
       return (
      <div className="lets-plan">
          <AddTask />
-         <ClockPopUp />
          <TaskList />
-
      </div>
         )
     }
   }
   
-  export default LetsPlan;
+  export default inject("GeneralStore","TaskManager")(observer(LetsPlan));

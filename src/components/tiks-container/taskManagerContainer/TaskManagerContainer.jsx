@@ -11,7 +11,7 @@ class TaskManagerContainer extends Component {
       return (
      <div>
          {/* <Home /> */}
-         <LetsPlan />
+         {/* <LetsPlan /> */}
          <Routine />
          <Reports />
      </div>

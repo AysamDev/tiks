@@ -19,7 +19,7 @@ class Home extends Component {
      <div className="home">
          <HeaderDate />
          <FontAwesomeIcon icon={faMap} size="10x" onClick={this.changeMapState} color="green"/>
-         {this.props.GeneralStore.openMap?<MapView />:null}
+         {this.props.GeneralStore.openMap?<MapView name={this.props.GeneralStore.mapOpener}/>:null}
          <TasksView />
      </div>
         )

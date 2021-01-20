@@ -4,9 +4,9 @@ export class Routine extends Task
 {
     constructor(title,place,startTime,endTime,selectedDays)
     {
-
+      super(title,place,startTime,endTime)
         this.days = selectedDays
-        super(title,place,startTime,endTime)
+        
 
         makeObservable(this, {
           days: observable

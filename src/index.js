@@ -6,12 +6,15 @@ import reportWebVitals from './reportWebVitals';
 import {Provider} from 'mobx-react'
 import {TaskManager as taskManager} from '../src/store/TaskManager'
 import {GeneralStore as generalStore} from '../src/store/GeneralStore'
-
+ import {RoutineManager as routineManager} from '../src/store/RoutineManager'
 const TaskManager = new taskManager()
 const GeneralStore = new generalStore()
+ const RoutineManager = new routineManager()
+
 const stores = {
   TaskManager,
-  GeneralStore
+  GeneralStore,
+   RoutineManager
 }
 ReactDOM.render(
   <Provider {... stores}>
