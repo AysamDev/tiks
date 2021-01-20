@@ -8,10 +8,9 @@ class Routine extends Component {
     render() {
       
       return (
-     <div>Routine
+     <div>
        <AddRoutine />
        <RoutineList />
-       <SelectDaysPopUp />
      </div>
         )
     }

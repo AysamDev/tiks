@@ -1,5 +1,7 @@
 import { observable, makeObservable, action } from 'mobx'
 import { Routine } from './Routine'
+import axios from 'axios'
+
 export class RoutineManager
 {
     constructor()
@@ -16,18 +18,18 @@ export class RoutineManager
 
     getRoutines = async (username) =>
     {
-        let response = await axios.get(`http://localhost:${PORT}/userRoutines/${username}`)
+        let response = await axios.get(`http://localhost:${process.env.PORT}/userRoutines/${username}`)
         this.routines = response.data
     }
-    addRoutine = async (title,place,startTime,endTime,selectedDays) =>
+    addRoutine = async (username,title,place,startTime,endTime,selectedDays) =>
     {
         let routine = new Routine(title,place,startTime,endTime,selectedDays)
-        let response = await axios.post(`http://localhost:${PORT}/userRoutine`,{username,routine})
+        let response = await axios.post(`http://localhost:${process.env.PORT}/userRoutine`,{username,routine})
     }
 
     deleteRoutine = async (id) =>
     {
-        let response = await axios.delete(`http://localhost:${PORT}/userRoutine`,{id})
+        let response = await axios.delete(`http://localhost:${process.env.PORT}/userRoutine`,{id})
     }
 
 }
