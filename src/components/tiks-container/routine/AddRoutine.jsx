@@ -30,7 +30,7 @@ class AddRoutine extends Component {
 
   setRoutineEndTime = (date) => {
 
-    this.props.GeneralStore.setRoutineStartTime(date);
+    this.props.GeneralStore.setRoutineEndTime(date);
   }
 
   addRoutine = () =>
@@ -43,8 +43,8 @@ class AddRoutine extends Component {
      <div>
         <h3>My Routines</h3>
         <div>
-          <div>Task Title </div>
-          <input name="routineTitle" type="text" placeholder="task title..." value={this.props.GeneralStore.routineTitle} onChange={this.inputHandler}/>
+          <div>Routine Title </div>
+          <input name="routineTitle" type="text" placeholder="routine title..." value={this.props.GeneralStore.routineTitle} onChange={this.inputHandler}/>
        </div>
        <div>
           <span>Search By </span>
